@@ -159,5 +159,5 @@ link_file "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 link_file "$DOTFILES_DIR/starship.toml" "$HOME/.config/starship.toml"
 link_file "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
-link_file "$DOTFILES_DIR/alacritty.toml" "$HOME/alacritty/alacritty.toml"
+link_file "$DOTFILES_DIR/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 link_skills
