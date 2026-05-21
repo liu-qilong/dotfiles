@@ -27,6 +27,10 @@ vim.keymap.set("n", "<S-ScrollWheelDown>", "zL")
 vim.keymap.set({ "n", "v" }, "y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
 
+-- buffer movement
+vim.keymap.set("n", "<leader>b<Left>", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left" })
+vim.keymap.set("n", "<leader>b<Right>", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right" })
+
 -- vscode specific keybindings
 if vim.g.vscode then
   local opts = { silent = true }
