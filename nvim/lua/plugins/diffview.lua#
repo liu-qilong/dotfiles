@@ -1,0 +1,34 @@
+return {
+  "sindrets/diffview.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  cmd = {
+    "DiffviewOpen",
+    "DiffviewClose",
+    "DiffviewFileHistory",
+    "DiffviewToggleFiles",
+  },
+  opts = {
+    hooks = {
+      diff_buf_read = function(bufnr)
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true -- wrap at word boundaries
+        vim.opt_local.foldenable = false -- disable folding to show full file
+      end,
+    },
+  },
+  keys = {
+    {
+      "<leader>gD",
+      function()
+        if next(require("diffview.lib").views) == nil then
+          vim.cmd("DiffviewOpen")
+        else
+          vim.cmd("DiffviewClose")
+        end
+      end,
+      desc = "Toggle Diffview",
+    },
+    { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File History (current)" },
+    { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "File History (repo)" },
+  },
+}

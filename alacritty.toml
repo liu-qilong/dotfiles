@@ -1,0 +1,55 @@
+[font]
+normal = { family = "CaskaydiaCove Nerd Font Mono", style = "Regular" }
+size = 14.0
+
+[window]
+opacity = 0.80
+blur = true
+padding = { x = 10, y = 10 }
+decorations = "buttonless"  # macOS: removes title bar for a "Minimal" theme feel
+option_as_alt = "Both"   # treat both left and right Option as Meta/Alt
+
+[terminal]
+osc52 = "CopyPaste"
+
+[colors]
+[colors.primary]
+background = "#1e1e2e"
+
+[[keyboard.bindings]]
+# cmd+enter to toggle maximized window size
+key = "Return"
+mods = "Command"
+action = "ToggleMaximized"
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Alt"
+chars = "\u001b\u007f"   # Opt+Backspace: delete word
+
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bb"   # Opt+Left: skip word left
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bf"   # Opt+Right: skip word right
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Command"
+chars = "\u0015"         # Cmd+Backspace: delete entire line
+
+ [[keyboard.bindings]]
+ key = "Left"
+ mods = "Command"
+ chars = "\u001bOH"       # Cmd+Left: go to line start
+ mode = "AppCursor"
+
+ [[keyboard.bindings]]
+ key = "Right"
+ mods = "Command"
+ chars = "\u001bOF"       # Cmd+Right: go to line end
+ mode = "AppCursor"

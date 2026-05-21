@@ -1,0 +1,22 @@
+{
+  "To be filled": {
+    "prefix": "tbf",
+    "body": "==[tbf]==",
+    "description": "To be filled"
+  },
+  "Idea tag": {
+    "prefix": "ideatag",
+    "body": "#💡",
+    "description": "Insert idea tag"
+  },
+  "Honey": {
+    "prefix": "huhu",
+    "body": "🐯🐯",
+    "description": "Insert honey's nickname"
+  },
+  "Insert Date": {
+    "prefix": "today",
+    "body": "${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}",
+    "description": "Insert date as DD Month YYYY"
+  }
+}
