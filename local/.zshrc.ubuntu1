@@ -1,0 +1,19 @@
+# Ubuntu machine 1-specific zsh configuration.
+
+path_prepend "$HOME/.pixi/bin"
+
+path_prepend "/usr/local/cuda-12.4/bin"
+if [[ -d /usr/local/cuda-12.4/lib64 ]]; then
+  export LD_LIBRARY_PATH="/usr/local/cuda-12.4/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+  export CUDA_HOME=/usr/local/cuda-12.4
+fi
+
+path_append "/opt/nvim-linux-x86_64/bin"
+
+command_exists keychain && eval "$(keychain --eval --quiet --agents ssh id_rsa)"
+
+source_if_exists "$HOME/clashctl/scripts/cmd/clashctl.sh"
+
+export https_proxy=http://127.0.0.1:7890
+export http_proxy=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7890

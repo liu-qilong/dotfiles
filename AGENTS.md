@@ -2,22 +2,21 @@
 
 ## Project Structure & Module Organization
 
-This repository stores personal dotfiles, editor configuration, and reusable agent skills. Top-level files configure shell and terminal tools: `.zshrc`, `.tmux.conf`, `starship.toml`, and `alacritty.toml`. `vscode/` contains VS Code JSON settings and keybindings. Neovim configuration lives in `nvim/`: `init.lua` is the entry point, `lua/config/` holds core LazyVim options, `lua/plugins/` holds plugin specs, and `snippets/` holds language snippets. Agent skills live in `skills/<skill-name>/`; each skill uses `SKILL.md` as its entry point and keeps helper scripts beside it. `setup.sh` creates home-directory symlinks.
+This repository stores personal dotfiles, editor configuration, and reusable agent skills. Top-level files configure shell and terminal tools: `.zshrc`, `.tmux.conf`, `starship.toml`, and `alacritty.toml`. Machine-specific zsh profiles live in `local/.zshrc.<profile>`; `setup.sh` discovers those files and prompts for one when creating the local selector. Neovim configuration lives in `nvim/`: `init.lua` is the entry point, `lua/config/` holds core LazyVim options, `lua/plugins/` holds plugin specs, and `snippets/` holds language snippets. Agent skills live in `skills/<skill-name>/`; each skill uses `SKILL.md` as its entry point and keeps helper scripts beside it. `setup.sh` creates home-directory symlinks.
 
 ## Build, Test, and Development Commands
 
 There is no build step. Use targeted validation:
 
-- `bash setup.sh`: install the shell, tmux, and starship symlinks. Review before running because it removes existing destination files.
+- `bash setup.sh`: install symlinks and, on first run, choose from profiles discovered in `local/.zshrc.*`.
 - `nvim --headless "+Lazy! sync" +qa`: sync and validate LazyVim plugin configuration.
 - `nvim --headless "+checkhealth" +qa`: run Neovim health checks.
 - `stylua nvim/lua`: format Lua files using `nvim/stylua.toml`.
-- `jq . vscode/settings.json vscode/keybindings.json`: validate VS Code JSON files.
 - `python -m py_compile skills/read-pdf/*.py`: syntax-check Python helper scripts.
 
 ## Coding Style & Naming Conventions
 
-Lua files use StyLua with 2-space indentation, spaces, and a 120-column width. Keep plugin specs small under `nvim/lua/plugins/`; name files after the plugin or feature, for example `copilot.lua` or `multi-cursor.lua`. Keep snippets in `nvim/snippets/<language>.json`. Skill directories use lowercase kebab-case names, for example `read-pdf`, and concise task-oriented `SKILL.md` files. Clean up editor backup files ending in `#`.
+Lua files use StyLua with 2-space indentation, spaces, and a 120-column width. Keep plugin specs small under `nvim/lua/plugins/`; name files after the plugin or feature, for example `copilot.lua` or `multi-cursor.lua`. Keep snippets in `nvim/snippets/<language>.json`. Zsh profile files use the `local/.zshrc.<profile>` pattern so setup can discover them automatically. Skill directories use lowercase kebab-case names, for example `read-pdf`, and concise task-oriented `SKILL.md` files. Clean up editor backup files ending in `#`.
 
 ## Testing Guidelines
 

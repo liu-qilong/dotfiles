@@ -1,0 +1,17 @@
+# macOS-specific zsh configuration.
+
+path_append "/opt/homebrew/bin"
+path_append "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/DeepSpace/scripts"
+path_prepend "$HOME/.codeium/windsurf/bin"
+path_append "$HOME/.local/bin/nvim-macos-arm64/bin"
+
+if command_exists npm; then
+  npm_prefix="$(npm config get prefix 2>/dev/null)"
+  [[ -n "$npm_prefix" ]] && path_append "$npm_prefix/bin"
+  unset npm_prefix
+fi
+
+export https_proxy=http://127.0.0.1:7890
+export http_proxy=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7890
+export ALL_PROXY="$http_proxy"
