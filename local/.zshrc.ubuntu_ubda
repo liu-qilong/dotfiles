@@ -1,5 +1,14 @@
 # Ubuntu machine 2-specific zsh configuration.
 
+# SSH clients can forward invalid locale values for Ubuntu, such as
+# LC_CTYPE=UTF-8 from macOS. Normalize them before tools like manpath run.
+for dotfiles_lc_var in ${(k)parameters[(I)LC_*]}; do
+  unset "$dotfiles_lc_var"
+done
+unset dotfiles_lc_var
+export LANG=C.UTF-8
+export LC_CTYPE=C.UTF-8
+
 command_exists keychain && eval "$(keychain --eval --quiet --agents ssh id_rsa)"
 
 path_append "/opt/nvim-linux-x86_64/bin"
