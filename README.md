@@ -22,7 +22,7 @@ bash setup.sh
 On the first run, the script discovers files matching `local/.zshrc.*` and asks which zsh profile to use:
 
 ```text
-Choose dotfiles host profile [macos/ubuntu1/ubuntu2]:
+Choose dotfiles host profile [macos/ubuntu_deeppush/ubuntu_ubda]:
 ```
 
 It writes the answer to this untracked file:
