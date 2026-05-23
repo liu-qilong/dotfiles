@@ -1,14 +1,4 @@
 {
-  "To be filled": {
-    "prefix": "tbf",
-    "body": "==[tbf]==",
-    "description": "To be filled"
-  },
-  "Idea tag": {
-    "prefix": "ideatag",
-    "body": "#💡",
-    "description": "Insert idea tag"
-  },
   "Honey": {
     "prefix": "huhu",
     "body": "🐯🐯",
@@ -18,5 +8,50 @@
     "prefix": "today",
     "body": "${CURRENT_DATE} ${CURRENT_MONTH_NAME} ${CURRENT_YEAR}",
     "description": "Insert date as DD Month YYYY"
+  },
+  "To be filled": {
+    "prefix": "tbf",
+    "body": "==[tbf]==",
+    "description": "To be filled"
+  },
+  "Idea tag": {
+    "prefix": "#idea",
+    "body": "#🖇️/💡",
+    "description": "Insert idea tag"
+  },
+  "Working tag": {
+    "prefix": "#work",
+    "body": "#🖇️/🔧",
+    "description": "Insert work tag"
+  },
+  "Target tag": {
+    "prefix": "#target",
+    "body": "#🖇️/🎯",
+    "description": "Insert target tag"
+  },
+  "Podcast tag": {
+    "prefix": "#podcast",
+    "body": "#🖇️/🎙️",
+    "description": "Insert podcast tag"
+  },
+  "Toread tag": {
+    "prefix": "#toread",
+    "body": "#🗞️/👀",
+    "description": "Insert toread tag"
+  },
+  "Insight tag": {
+    "prefix": "#insight",
+    "body": "#🗞️/🧠",
+    "description": "Insert insight tag"
+  },
+  "Performance tag": {
+    "prefix": "#performance",
+    "body": "#🗞️/🚀",
+    "description": "Insert performance tag"
+  },
+  "Popular tag": {
+    "prefix": "#popular",
+    "body": "#🗞️/🔥",
+    "description": "Insert popular tag"
   }
 }
