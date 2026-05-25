@@ -29,3 +29,13 @@ if vim.env.SSH_TTY ~= nil then
     },
   }
 end
+
+-- LaTeX pdf viewer setup
+vim.g.vimtex_view_method = "skim"
+vim.g.vimtex_compiler_latexmk = {
+  options = {
+    "-pdf",
+    "-interaction=nonstopmode",
+    "-synctex=1",
+  },
+}
