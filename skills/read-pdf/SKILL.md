@@ -16,6 +16,7 @@ Three ready-to-use scripts are available:
 
 Usage: `python read_w_pypdf.py --pdf_path /path/to/file.pdf`
 
+_P.S. Don't forget to use the `base` Conda environment for this skill. All dependencies have been installed in it._
 
 ## Using the Scripts
 
