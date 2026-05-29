@@ -5,6 +5,7 @@ debug
 .repro
 foo.*
 *.log
+.nvimlog
 data
 .DS_Store
 .zshrc.dotfiles-host

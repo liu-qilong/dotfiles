@@ -17,6 +17,9 @@ return {
       },
     },
     keymap = {
+      preset = "enter",
+      ["<CR>"] = { "accept", "fallback" },
+      ["<C-M>"] = { "accept", "fallback" },
       ["<Tab>"] = { "snippet_forward", "fallback" },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
     },
