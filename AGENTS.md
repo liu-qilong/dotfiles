@@ -9,8 +9,7 @@ This repository stores personal dotfiles, editor configuration, and reusable age
 There is no build step. Use targeted validation:
 
 - `bash setup.sh`: install symlinks and, on first run, choose from profiles discovered in `local/.zshrc.*`.
-- `nvim --headless "+Lazy! sync" +qa`: sync and validate LazyVim plugin configuration.
-- `nvim --headless "+checkhealth" +qa`: run Neovim health checks.
+- `nvim --headless "+Lazy! sync" +qa`: sync and validate LazyVim plugin configuration. `nvim --headless "+checkhealth" +qa`: run Neovim health checks.
 - `stylua nvim/lua`: format Lua files using `nvim/stylua.toml`.
 - `python -m py_compile skills/read-pdf/*.py`: syntax-check Python helper scripts.
 
