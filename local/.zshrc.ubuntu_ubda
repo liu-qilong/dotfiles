@@ -11,6 +11,6 @@ export LC_CTYPE=C.UTF-8
 
 command_exists keychain && eval "$(keychain --eval --quiet --agents ssh id_rsa)"
 
-path_append "/opt/nvim-linux-x86_64/bin"
+path_prepand "/opt/nvim-linux-x86_64/bin"
 
 source_if_exists "$HOME/.local/bin/env"

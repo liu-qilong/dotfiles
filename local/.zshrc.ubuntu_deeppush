@@ -8,7 +8,7 @@ if [[ -d /usr/local/cuda-12.4/lib64 ]]; then
   export CUDA_HOME=/usr/local/cuda-12.4
 fi
 
-path_append "/opt/nvim-linux-x86_64/bin"
+path_prepend "/opt/nvim-linux-x86_64/bin"
 
 command_exists keychain && eval "$(keychain --eval --quiet --agents ssh id_rsa)"
 
