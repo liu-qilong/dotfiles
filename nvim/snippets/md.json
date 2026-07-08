@@ -14,6 +14,11 @@
     "body": "==[tbf]==",
     "description": "To be filled"
   },
+  "Arrow": {
+    "prefix": "->",
+    "body": "👉",
+    "description": "Arrow"
+  },
   "Idea tag": {
     "prefix": "#idea",
     "body": "#🖇️/💡",
