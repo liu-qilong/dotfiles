@@ -2,13 +2,13 @@ return {
   {
     "lervag/vimtex",
     init = function()
-      -- Display literal LaTeX source.
+      -- Display literal LaTeX source
       vim.g.vimtex_syntax_conceal_disable = 1
 
-      -- Use Skim for viewing and SyncTeX forward search.
+      -- Use Skim for viewing and SyncTeX forward search
       vim.g.vimtex_view_method = "skim"
 
-      -- Do not automatically open quickfix.
+      -- Do not automatically open quickfix
       vim.g.vimtex_quickfix_mode = 0
 
       -- One-off compilation with \ll
@@ -23,6 +23,13 @@ return {
         },
       }
 
+      -- TOC setup
+      vim.g.vimtex_toc_config = {
+        split_pos = "vert botright",
+        layers = { "content", "todo" },
+      }
+
+      -- open .tex files in plain text mode to avoid conceal issues
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "tex", "plaintex" },
         callback = function()
