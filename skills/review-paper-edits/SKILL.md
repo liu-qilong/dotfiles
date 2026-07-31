@@ -1,6 +1,6 @@
 ---
 name: review-paper-edits
-description: Review recent LaTeX paper edits for grammar errors, notation consistency, language style, and clarity. Universal skill for academic paper writing.
+description: Review recent LaTeX paper edits for grammar errors, notation consistency, language style, and clarity. Don't invoke this skill automatically; it should be invoke by the user explictly via the `$review-paper-edits` command.
 ---
 
 # Skill: review-paper-edits
