@@ -8,7 +8,7 @@ return {
       -- Your setup opts here (leave empty to use defaults)
       providers = {
         -- Prefer outline.nvim's native Markdown parser over obsidian-ls.
-        priority = { "markdown", "lsp", "coc", "norg", "man" },
+        priority = { "markdown", "beancount", "lsp", "coc", "norg", "man" },
       },
       symbols = {
         filter = {
