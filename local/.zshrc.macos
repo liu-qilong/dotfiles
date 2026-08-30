@@ -1,6 +1,7 @@
 # macOS-specific zsh configuration.
 
 path_append "/opt/homebrew/bin"
+init_conda "/opt/homebrew/bin/conda"
 path_append "$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/DeepSpace/scripts"
 path_prepend "$HOME/.codeium/windsurf/bin"
 path_append "$HOME/.local/bin/nvim-macos-arm64/bin"

@@ -41,16 +41,16 @@ return {
   "obsidian-nvim/obsidian.nvim",
   version = "*",
   ft = "markdown",
-  dependencies = {
-    "saghen/blink.cmp", -- declare blink as dependency
-  },
+  -- dependencies = {
+  --   "saghen/blink.cmp", -- declare blink as dependency
+  -- },
   opts = function()
     return {
       legacy_commands = false,
       workspaces = workspaces(),
       completion = {
-        nvim_cmp = false,
-        blink = true,
+        -- nvim_cmp = false,
+        -- blink = true,
         min_chars = 2,
       },
     }

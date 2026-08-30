@@ -1,5 +1,7 @@
 # Ubuntu machine 1-specific zsh configuration.
 
+init_conda "$HOME/miniconda3/bin/conda"
+
 path_prepend "$HOME/.pixi/bin"
 
 path_prepend "/usr/local/cuda-12.4/bin"

@@ -1,5 +1,7 @@
 # Ubuntu machine 2-specific zsh configuration.
 
+init_conda "$HOME/miniconda3/bin/conda"
+
 # SSH clients can forward invalid locale values for Ubuntu, such as
 # LC_CTYPE=UTF-8 from macOS. Normalize them before tools like manpath run.
 for dotfiles_lc_var in ${(k)parameters[(I)LC_*]}; do

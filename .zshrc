@@ -33,6 +33,16 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
+# Initialize Conda from an installation path selected by a machine profile.
+init_conda() {
+  local conda_executable="$1"
+  [[ -x "$conda_executable" ]] || return
+
+  local conda_setup
+  conda_setup="$("$conda_executable" shell.zsh hook 2>/dev/null)"
+  [[ $? -eq 0 ]] && eval "$conda_setup"
+}
+
 # Keep PATH entries unique while preserving order. zsh ties path and PATH
 # together, so editing the path array also updates the exported PATH string.
 typeset -U path PATH
@@ -109,20 +119,6 @@ fi
 
 # Prompt. Machine profiles load before this, so they can add starship to PATH.
 command_exists starship && eval "$(starship init zsh)"
-
-# Conda. This assumes Miniconda lives at $HOME/miniconda3 on every machine.
-# If it is absent, this block is skipped.
-if [[ -x "$HOME/miniconda3/bin/conda" ]]; then
-  __conda_setup="$("$HOME/miniconda3/bin/conda" shell.zsh hook 2>/dev/null)"
-  if [[ $? -eq 0 ]]; then
-    eval "$__conda_setup"
-  elif [[ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]]; then
-    source "$HOME/miniconda3/etc/profile.d/conda.sh"
-  else
-    path_prepend "$HOME/miniconda3/bin"
-  fi
-  unset __conda_setup
-fi
 
 autoload -Uz zcalc
 
