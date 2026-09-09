@@ -1,16 +1,50 @@
 return {
   {
-    "mg979/vim-visual-multi",
-    branch = "master",
-    lazy = false, -- must NOT be lazy-loaded or keymaps won't work
-    init = function()
-      -- vim.g.* settings must go in `init`, not `config`
-      vim.g.VM_maps = {
-        ["Find Under"] = "<C-n>",
-        ["Find Subword Under"] = "<C-n>",
-        ["Select Cursor Down"] = "<M-Down>",
-        ["Select Cursor Up"] = "<M-Up>",
-      }
+    "jake-stewart/multicursor.nvim",
+    branch = "1.0",
+    lazy = false,
+
+    config = function()
+      local mc = require("multicursor-nvim")
+      mc.setup()
+
+      local set = vim.keymap.set
+
+      -- <C-n>: select word under cursor / add next occurrence
+      set({ "n", "x" }, "<C-n>", function()
+        mc.matchAddCursor(1)
+      end)
+
+      -- Add cursor vertically
+      set({ "n", "x" }, "<M-Down>", function()
+        mc.lineAddCursor(1)
+      end)
+
+      set({ "n", "x" }, "<M-Up>", function()
+        mc.lineAddCursor(-1)
+      end)
+
+      -- These mappings only exist while multiple cursors are active.
+      mc.addKeymapLayer(function(layerSet)
+        -- vim-visual-multi:
+        -- q = skip current match and go to next
+        layerSet({ "n", "x" }, "q", function()
+          mc.matchSkipCursor(1)
+        end)
+
+        -- vim-visual-multi:
+        -- Q = remove current cursor/selection
+        layerSet({ "n", "x" }, "Q", mc.deleteCursor)
+
+        -- Esc = exit multicursor
+        layerSet("n", "<Esc>", function()
+          if not mc.cursorsEnabled() then
+            mc.enableCursors()
+          else
+            mc.clearCursors()
+          end
+        end)
+      end)
     end,
   },
 }
